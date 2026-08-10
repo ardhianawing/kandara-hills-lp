@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terima kasih — Kandara Hills</title>
+<meta name="description" content="Permintaan penawaran Kandara Hills sudah kami terima. Tim marketing akan menghubungi Anda maksimal 1x24 jam.">
+<meta name="theme-color" content="#183425">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="icon" href="../assets/logo/logo-1.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<main class="thanks">
+  <div class="thanks__inner">
+    <img src="../assets/logo/kandara-putih.png" alt="Kandara Hills" width="700" height="759" style="height:56px;width:auto;margin:0 auto 2.5rem">
+
+    <div class="thanks__mark" aria-hidden="true"></div>
+
+    <h1 class="h2" id="salam">Terima kasih.</h1>
+
+    <p class="thanks__lead">
+      Permintaan Anda sudah masuk ke tim marketing Kandara Hills.
+      Kami menghubungi Anda lewat WhatsApp <strong style="color:#fff">maksimal 1&times;24 jam</strong>
+      dengan price list, denah kavling yang masih tersedia, dan rincian bonus pre-launching.
+    </p>
+
+    <div class="thanks__panel">
+      <dl>
+        <dt>Nama</dt>       <dd id="ringkasNama">—</dd>
+        <dt>Tipe diminati</dt><dd id="ringkasTipe">—</dd>
+        <dt>Status</dt>     <dd>Menunggu dihubungi</dd>
+      </dl>
+    </div>
+
+    <div class="thanks__actions">
+      <a href="https://wa.me/628133154170" class="btn btn--lg" id="waLangsung" data-wa="Halo, saya baru saja mengisi form di website Kandara Hills. Boleh dibantu info price list dan bonus pre-launching?">
+        <svg class="btn__wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.7 1-.9 1.2c-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.6-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.6-1.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
+        Chat sales sekarang
+      </a>
+      <a class="btn btn--ghost btn--lg" href="index.html">Kembali ke halaman utama</a>
+    </div>
+
+    <p style="margin-top:2rem;font-size:.78rem;color:rgba(255,255,255,.42)">
+      Developed by Kandara Hills · Karangploso, Malang
+    </p>
+  </div>
+</main>
+
+<script src="../assets/js/common.js"></script>
+<script>
+  /* Tampilkan kembali isian pengunjung supaya halaman ini terasa personal
+     dan mereka yakin datanya benar-benar terkirim. */
+  (function () {
+    var params = new URLSearchParams(location.search);
+    var nama = (params.get('nama') || '').trim().slice(0, 60);
+    var tipe = params.get('tipe') || '';
+
+    var labels = {
+      savaya: 'SAVAYA — The Maison (6 x 12)',
+      alila:  'ALILA — The Verde (12 x 12)',
+      belum:  'Belum menentukan'
+    };
+
+    if (nama) {
+      document.getElementById('salam').textContent = 'Terima kasih, ' + nama + '.';
+      document.getElementById('ringkasNama').textContent = nama;
+    }
+
+    document.getElementById('ringkasTipe').textContent = labels[tipe] || 'Belum menentukan';
+
+    /* Perkaya pesan WhatsApp dengan konteks yang barusan diisi. */
+    var wa = document.getElementById('waLangsung');
+    if (wa && typeof waLink === 'function') {
+      var pesan = 'Halo, saya ' + (nama || 'calon pembeli') +
+        '. Saya baru mengisi form di website Kandara Hills' +
+        (labels[tipe] ? ' dan tertarik dengan tipe ' + labels[tipe] : '') +
+        '. Boleh dibantu info price list dan bonus pre-launching?';
+      wa.setAttribute('href', waLink(pesan));
+    }
+  })();
+</script>
+</body>
+</html>
