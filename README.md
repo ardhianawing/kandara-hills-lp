@@ -1,5 +1,10 @@
 # Kandara Hills — Dua Landing Page Iklan
 
+**Live:** https://ardhianawing.github.io/kandara-hills-lp/
+
+- LP-WA: https://ardhianawing.github.io/kandara-hills-lp/wa/
+- LP-FORM: https://ardhianawing.github.io/kandara-hills-lp/form/
+
 Dua landing page dengan brand dan desain sama, tapi mekanisme konversi berbeda,
 supaya bisa diadu langsung mana yang menghasilkan lead lebih murah.
 
